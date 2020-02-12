@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration</title>
+</head>
+<body>
+
+<ul>
+    <li>
+        <a th:href="@{/}">Index</a>
+    </li>
+    <li>
+        <a th:href="@{/login}">Login</a>
+    </li>
+</ul>
+
+    <h2>Registration</h2>
+
+    <form autocomplete="off" action="#" th:action="@{/registration}" th:object="${user}" method="post">
+    <h2><span class="text-success" th:utext="${successMessage}"></span></h2>
+    <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></label>
+    <label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></label>
+    <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></label>
+    <label th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></label>
+    <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></label>
+
+    <table>
+        <tr>
+            <td><label>Name</label></td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td><label>Last Name</label></td>
+            <td><input type="text" th:field="*{lastName}"/></td>
+        </tr>
+        <tr>
+            <td><label>Email</label></td>
+            <td><input type="text" th:field="*{email}"/></td>
+        </tr>
+        <tr>
+            <td><label>Username</label></td>
+            <td><input type="text" th:field="*{userName}"/></td>
+        </tr>
+        <tr>
+            <td><label>Password</label></td>
+            <td><input type="password" th:field="*{password}"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Register User"/></td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

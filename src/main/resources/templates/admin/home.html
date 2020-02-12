@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin</title>
+</head>
+<body>
+<ul>
+    <li>
+        <a th:href="@{/}">Index</a>
+    </li>
+    <li>
+        <a th:href="@{/logout}">Logout</a>
+    </li>
+</ul>
+<!--    <h3 th:utext="${adminMessage}"></h3>-->
+    <center><h3 th:utext="${Name}"></h3></center>
+    <h5 th:utext="${Email}"></h5>
+</body>
+</html>
